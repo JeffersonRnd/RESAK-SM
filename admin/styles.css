@@ -1,0 +1,431 @@
+/* Pantalla de carga */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-logo {
+    width: 200px;
+    margin-bottom: 2rem;
+    filter: invert(1);
+}
+
+.loading-text {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* ESILOS genrales */
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Logo  y la Navegacion */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    filter: invert(1);
+    margin-left: 1px;
+}
+.nav-item .nav-link svg {
+    width: 24px; 
+    height: 24px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 1.5rem;
+    width: 100%; 
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Barra de búsqueda */
+.search-container {
+    position: relative;
+    width: 500px;
+}
+
+.search-input {
+    padding-left: 35px;
+    border-radius: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+/* Iconos de las redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; 
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+    filter: invert(1);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Notificacion */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: green;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Modal */
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+/* Estilo para el botón de generar reporte */
+#generateReportBtn {
+    width: 100%; 
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Sections */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+/*Espacios para editar*/
+.gallery-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-item {
+    width: 45%;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.image-item img {
+    max-width: 100%;
+    max-height: 300px; 
+    object-fit: contain;  
+    border-radius: 8px;
+}
+
+.description {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.file-input {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.update-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #45a049;
+}
+/* Ajuste para el mensaje de "Ningún archivo seleccionado" */
+.file-input {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black;
+    font-size: 12px; 
+}
+
+.image-item img {
+    color: black; 
+}
+
+/* Estilo general para el texto de los mensajes */
+.image-item {
+    color: black; 
+    font-size: 14px; 
+}
+
+/* Categorías */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-buttons .btn {
+    min-width: 120px;
+}
+
+/* Sección para editar */
+.edit-data-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.edit-btn {
+    background-color: red;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.edit-btn:hover {
+    background-color: darkred;
+}
+
+/* Estilos del Modal */
+.custom-modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+}
+
+.custom-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 500px; 
+    text-align: center;
+    font-size: 18px;
+    position: relative; 
+    z-index: 10000; 
+}
+
+.custom-modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.custom-modal-content button {
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 5px; 
+}
+
+/* Botón de cierre del modal */
+.close-modal-btn {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: black; 
+    color: white; 
+    border: 2px solid white; 
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: bold; 
+    width: 40px; 
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001; 
+}
+
+.close-modal-btn:hover {
+    background-color: red; 
+    border-color: black; 
+    color: black; 
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .edit-btn {
+        font-size: 16px; 
+        padding: 10px 20px;
+    }
+
+    .custom-modal-content {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-btn {
+        font-size: 14px; 
+        padding: 8px 16px;
+    }
+}
+
+/* Dashboard */
+#admin-dashboard {
+    background-color: #000; 
+    padding: 30px 0;
+    
+}
+
+.card {
+    background-color: #1a1a1a;
+    color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+body {
+    background-color: #000; 
+    font-family: Arial, sans-serif;
+}
+
+.container h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* Footer */
+.footer-logo {
+    height: 80px;
+    filter: invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-container {
+        width: 100%;
+    }
+    
+    .category-buttons {
+        flex-direction: column;
+    }
+    
+    .category-buttons .btn {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .image-item {
+        width: 100%; 
+    }
+}
