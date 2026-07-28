@@ -216,6 +216,21 @@ body {
 .update-btn:hover {
     background-color: #45a049;
 }
+
+.remove-btn {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    background-color: #b02a2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #8f2222;
+}
 /* Ajuste para el mensaje de "Ningún archivo seleccionado" */
 .file-input {
     margin-top: 10px;

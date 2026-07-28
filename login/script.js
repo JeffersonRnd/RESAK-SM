@@ -12,6 +12,18 @@ const welcomeScreen = document.getElementById('welcomeScreen');
 const dniLabel = document.getElementById('dniLabel'); 
 const rucLabel = document.getElementById('rucLabel'); 
 
+// Muestra un aviso dentro de la página, en lugar del alert() del navegador
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast show';
+    toast.innerHTML = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
 // bienvenida
 setTimeout(() => {
     welcomeScreen.classList.add('hidden');
@@ -32,7 +44,7 @@ nextButton.addEventListener("click", (e) => {
         nextButton.classList.add("hidden");
         createAccount.classList.remove("hidden");
     } else {
-        alert("Por favor, complete todos los campos requeridos.");
+        showToast("Por favor, complete todos los campos requeridos.");
     }
 });
 
@@ -44,7 +56,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
     const password = document.getElementById('password');
 
     if (username.value.trim() === '' || password.value.trim() === '') {
-        alert('Por favor, ingrese un nombre de usuario y contraseña válidos');
+        showToast('Por favor, ingrese un nombre de usuario y contraseña válidos');
     } else {
         const userData = {
             firstName: firstName.value.trim(),
@@ -60,7 +72,7 @@ document.getElementById('submitLogin').addEventListener('click', (e) => {
         localStorage.setItem('userData', JSON.stringify(userData));
 
         console.log(userData);
-        alert('Datos registrados correctamente');
+        showToast('Datos registrados correctamente');
 
         // Redirigir según el rol seleccionado
         const redirectTimeout = 2000;

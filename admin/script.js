@@ -44,7 +44,7 @@ function filterCategory(category) {
         div.className = "image-item";
         div.innerHTML = `
             <div class="image-preview">
-                <img src="${item.img || 'placeholder.jpg'}" alt="${category} ${index + 1}" 
+                <img src="${item.img || 'images/product-placeholder.svg'}" alt="${category} ${index + 1}" 
                     class="image" id="img-${itemId}">
             </div>
             <div class="image-controls">
@@ -54,6 +54,9 @@ function filterCategory(category) {
                     placeholder="Descripción del producto">${item.desc}</textarea>
                 <button class="update-btn" onclick="updateCategoryItem('${itemId}', '${category}')">
                     Actualizar Datos
+                </button>
+                <button class="remove-btn" onclick="removeCategoryItem('${itemId}', '${category}')">
+                    Quitar
                 </button>
             </div>
         `;
@@ -93,6 +96,20 @@ function updateCategoryItem(itemId, category) {
 }
 
 
+// Quita la imagen y descripción de un producto, dejando el ícono por defecto
+function removeCategoryItem(itemId, category) {
+    const [cat, index] = itemId.split('-');
+
+    categories[category][parseInt(index) - 1] = {
+        img: '',
+        desc: ''
+    };
+
+    filterCategory(category);
+    showToast("Producto eliminado correctamente");
+}
+
+
 function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'toast show';
@@ -113,7 +130,7 @@ function updateItem(id, category) {
     if (item) {
         item.img = imgSrc;
         item.desc = description;
-        alert("Datos actualizados correctamente!");
+        showToast("Datos actualizados correctamente!");
     }
 }
 
@@ -136,7 +153,7 @@ function closeModal(modalId) {
 
 // Función para guardar los cambios 
 function saveChanges() {
-    alert("Cambios guardados correctamente.");
+    showToast("Cambios guardados correctamente.");
 }
 
 // Función para manejar el clic en el botón "Generar Reporte"
@@ -281,6 +298,19 @@ function updateImage(imgId, fileId, descId) {
 
     // Actualiza la descripción
     description.value = description.value || "Descripción sin contenido";
+}
+
+// Quita la imagen y descripción cargadas, dejando el ícono por defecto
+function removeImage(imgId, fileId, descId) {
+    const fileInput = document.getElementById(fileId);
+    const imageElement = document.getElementById(imgId);
+    const description = document.getElementById(descId);
+
+    imageElement.src = 'images/product-placeholder.svg';
+    fileInput.value = '';
+    description.value = '';
+
+    showToast("Imagen eliminada correctamente");
 }
 
 // Ventas del Día
