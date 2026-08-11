@@ -334,19 +334,19 @@ new Chart(salesTodayCtx, {
             legend: {
                 display: true,
                 labels: {
-                    color: '#000'
+                    color: '#98a0ab'
                 }
             }
         },
         scales: {
             x: {
                 ticks: {
-                    color: '#000' // Eje X 
+                    color: '#98a0ab' // Eje X 
                 }
             },
             y: {
                 ticks: {
-                    color: '#000' // Eje Y 
+                    color: '#98a0ab' // Eje Y 
                 }
             }
         }
@@ -388,7 +388,7 @@ new Chart(productsInStockCtx, {
             legend: {
                 position: 'bottom',
                 labels: {
-                    color: '#000'
+                    color: '#98a0ab'
                 }
             }
         }
@@ -417,19 +417,19 @@ new Chart(salesPerformanceCtx, {
             legend: {
                 display: true,
                 labels: {
-                    color: '#000'
+                    color: '#98a0ab'
                 }
             }
         },
         scales: {
             x: {
                 ticks: {
-                    color: '#000' // Eje X 
+                    color: '#98a0ab' // Eje X 
                 }
             },
             y: {
                 ticks: {
-                    color: '#000' // Eje Y
+                    color: '#98a0ab' // Eje Y
                 }
             }
         }

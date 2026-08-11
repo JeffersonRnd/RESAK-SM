@@ -34,6 +34,15 @@ function loadCartFromStorage() {
 // Función para guardar los datos del carrito en localStorage
 function saveCartToStorage() {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    updateCartBadge();
+}
+
+function updateCartBadge() {
+    const badge = document.getElementById('cartBadge');
+    if (!badge) return;
+    const totalUnits = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    badge.textContent = totalUnits;
+    badge.style.display = totalUnits > 0 ? 'flex' : 'none';
 }
 
 
@@ -44,7 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 
     loadCartFromStorage();
+    updateCartBadge();
     setupEventListeners();
+    renderProducts('Bebidas');
 });
 
 function setupEventListeners() {
